@@ -1,0 +1,18 @@
+--- RCPTT testcase ---
+Format-Version: 1.0
+Element-Name: tsSimpleTestCases
+Element-Type: testsuite
+Element-Version: 2.0
+Id: _UhigQInPEeajzpRxELbHyA
+Runtime-Version: 2.1.0.201606221726
+Save-Time: 10/3/16 9:10 PM
+
+------=_testcase-items-62c497da-4241-31f4-811a-6b453a3ecff8
+Content-Type: text/testcase
+Entry-Name: testcase-items
+
+_7IqJEImlEeajzpRxELbHyA	// kind: 'test' name: 'AddAllComponents' path: '../testCases/AddAllComponents.test'
+_aOmi0ImlEeajzpRxELbHyA	// kind: 'test' name: 'AddNewJob' path: '../testCases/AddNewJob.test'
+_QCzOcImrEeajzpRxELbHyA	// kind: 'test' name: 'TestSimpleJob' path: '../testCases/TestSimpleJob.test'
+
+------=_testcase-items-62c497da-4241-31f4-811a-6b453a3ecff8--

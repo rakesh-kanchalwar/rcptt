@@ -1,0 +1,1043 @@
+--- RCPTT testcase ---
+Format-Version: 1.0
+Element-Name: tcAddAllComponents
+Element-Type: testcase
+Element-Version: 3.0
+External-Reference: 
+Id: _7IqJEImlEeajzpRxELbHyA
+Runtime-Version: 2.1.0.201606221726
+Save-Time: 10/3/16 9:13 PM
+Testcase-Type: ecl
+
+------=_.content-0a7243a0-75d3-3d5f-9791-539de0e5b7ac
+Content-Type: text/ecl
+Entry-Name: .content
+
+get-button "(M1+J)" | click -arrow
+get-menu Job | click
+with [get-window "New Job"] {
+    get-tree | select "Test/jobs"
+    get-editbox -after [get-label "File name:"] | set-text "AllComponents.job"
+    get-button Finish | click
+}
+get-view "Project Explorer" | get-tree | select "Test/jobs/AllComponents.job" | double-click
+with [get-view Palette | get-palette] {
+    with [get-palette-entry Input] {
+        mouse-move 73 15 button1 -height 22 -width 280
+        mouse-press 73 15 button1 -height 22 -width 280
+        mouse-release 73 15 button1 524288 -height 22 -width 280
+    }
+    with [get-palette-entry "File Delimited"] {
+        mouse-move 58 13 button1 -height 23 -width 280
+        mouse-press 58 13 button1 -height 23 -width 280
+        get-figure 0 | drag-start 58 13
+    }
+}
+with [get-editor "AllComponents.job" | get-diagram | get-edit-part -className ContainerEditPart] {
+    drag-enter 0 38 -detail move
+    drag-over 35 28 -detail copy
+    drag-exit
+    drag-accept 35 28 -detail copy
+}
+get-view Palette | get-palette | drag-set-data
+get-editor "AllComponents.job" | get-diagram | get-edit-part -className ContainerEditPart | drop 35 28 -detail copy
+with [get-view Palette | get-palette] {
+    drag-end -detail copy
+    get-palette-entry Input | mouse-hover 269 18 -mask 524288 -height 359 -width 280
+    get-palette-entry "File Delimited" | mouse-move 210 22 -height 23 -width 280
+    with [get-palette-entry "File Fixed Width"] {
+        mouse-move 101 13 button1 -height 23 -width 280
+        mouse-press 101 13 button1 -height 23 -width 280
+        get-figure 0 | drag-start 101 13
+    }
+}
+with [get-editor "AllComponents.job" | get-diagram | get-edit-part -className ContainerEditPart] {
+    drag-enter 24 110 -detail move
+    drag-over 75 132 -detail copy
+    drag-exit
+    drag-accept 75 132 -detail copy
+}
+get-view Palette | get-palette | drag-set-data
+get-editor "AllComponents.job" | get-diagram | get-edit-part -className ContainerEditPart | drop 75 132 -detail copy
+with [get-view Palette | get-palette] {
+    drag-end -detail copy
+    get-palette-entry | mouse-hover 396 101 -mask 524288 -height 451 -width 280
+    with [get-palette-entry "File Mixed Scheme"] {
+        mouse-move 140 12 button1 -height 23 -width 280
+        mouse-press 140 12 button1 -height 23 -width 280
+        get-figure 0 | drag-start 140 12
+    }
+}
+with [get-editor "AllComponents.job" | get-diagram | get-edit-part -className ContainerEditPart] {
+    drag-enter 0 202 -detail move
+    drag-over 77 232 -detail copy
+    drag-exit
+    drag-accept 77 232 -detail copy
+}
+get-view Palette | get-palette | drag-set-data
+get-editor "AllComponents.job" | get-diagram | get-edit-part -className ContainerEditPart | drop 77 232 -detail copy
+with [get-view Palette | get-palette] {
+    drag-end -detail copy
+    get-palette-entry | mouse-hover 363 203 -mask 524288 -height 451 -width 280
+}
+get-editor "AllComponents.job" | get-diagram | get-edit-part -className ContainerEditPart | get-edit-part 
+    -className ComponentEditPart -index 2 | mouse-move 0 0 -height 80 -width 100
+with [get-view Palette | get-palette] {
+    with [get-palette-entry "File Parquet"] {
+        mouse-move 99 15 button1 -height 23 -width 280
+        mouse-press 99 15 button1 -height 23 -width 280
+        get-figure 0 | drag-start 99 15
+    }
+}
+with [get-editor "AllComponents.job" | get-diagram | get-edit-part -className ContainerEditPart] {
+    drag-enter 30 312 -detail move
+    drag-over 112 343 -detail copy
+    drag-exit
+    drag-accept 112 343 -detail copy
+}
+get-view Palette | get-palette | drag-set-data
+get-editor "AllComponents.job" | get-diagram | get-edit-part -className ContainerEditPart | drop 112 343 -detail copy
+with [get-view Palette | get-palette] {
+    drag-end -detail copy
+    get-palette-entry | mouse-hover 401 314 -mask 524288 -height 451 -width 280
+    with [get-palette-entry "Generate Records"] {
+        mouse-move 123 16 button1 -height 23 -width 280
+        mouse-press 123 16 button1 -height 23 -width 280
+        get-figure 0 | drag-start 123 16
+    }
+}
+with [get-editor "AllComponents.job" | get-diagram | get-edit-part -className ContainerEditPart] {
+    drag-enter 22 113 -detail move
+    drag-over 206 59 -detail copy
+    drag-exit
+    drag-accept 206 59 -detail copy
+}
+get-view Palette | get-palette | drag-set-data
+get-editor "AllComponents.job" | get-diagram | get-edit-part -className ContainerEditPart | drop 206 59 -detail copy
+with [get-view Palette | get-palette] {
+    drag-end -detail copy
+    get-palette-entry | mouse-hover 485 31 -mask 524288 -height 451 -width 280
+}
+get-editor "AllComponents.job" | get-diagram | get-edit-part -className ContainerEditPart | get-edit-part 
+    -className ComponentEditPart | mouse-move 14 71 -height 80 -width 100
+with [get-view Palette | get-palette] {
+    with [get-palette-entry "Hive Parquet"] {
+        mouse-move 103 9 button1 -height 23 -width 280
+        mouse-press 103 9 button1 -height 23 -width 280
+        get-figure 0 | drag-start 103 9
+    }
+}
+with [get-editor "AllComponents.job" | get-diagram | get-edit-part -className ContainerEditPart] {
+    drag-enter 45 181 -detail move
+    drag-over 272 181 -detail copy
+    drag-exit
+    drag-accept 272 181 -detail copy
+}
+get-view Palette | get-palette | drag-set-data
+get-editor "AllComponents.job" | get-diagram | get-edit-part -className ContainerEditPart | drop 272 181 -detail copy
+with [get-view Palette | get-palette] {
+    drag-end -detail copy
+    get-palette-entry | mouse-hover 594 151 -mask 524288 -height 451 -width 280
+}
+get-editor "AllComponents.job" | get-diagram | get-edit-part -className ContainerEditPart | get-edit-part 
+    -className ComponentEditPart -index 1 | mouse-move 14 47 -height 80 -width 100
+with [get-view Palette | get-palette] {
+    get-palette-entry "Hive Parquet" | mouse-move 118 22 -height 23 -width 280
+    with [get-palette-entry "Hive Text File"] {
+        mouse-move 82 8 button1 -height 23 -width 280
+        mouse-press 82 8 button1 -height 23 -width 280
+        get-figure 0 | drag-start 82 8
+    }
+}
+with [get-editor "AllComponents.job" | get-diagram | get-edit-part -className ContainerEditPart] {
+    drag-enter 37 232 -detail move
+    drag-over 281 281 -detail copy
+    drag-exit
+    drag-accept 281 281 -detail copy
+}
+get-view Palette | get-palette | drag-set-data
+get-editor "AllComponents.job" | get-diagram | get-edit-part -className ContainerEditPart | drop 281 281 -detail copy
+with [get-view Palette | get-palette] {
+    drag-end -detail copy
+    get-palette-entry | mouse-hover 514 244 -mask 524288 -height 451 -width 280
+}
+get-editor "AllComponents.job" | get-diagram | get-edit-part -className ContainerEditPart | get-edit-part 
+    -className ComponentEditPart -index 1 | mouse-move 34 53 -height 80 -width 100
+get-view Palette | get-palette | get-palette-entry "File Fixed Width" | mouse-move 272 11 -height 23 -width 280
+with [get-editor "AllComponents.job" | get-diagram | get-edit-part -className ContainerEditPart | get-edit-part 
+    -className ComponentEditPart] {
+    mouse-move 43 49 button1 -height 80 -width 100
+    mouse-press 43 49 button1 -height 80 -width 100
+    mouse-release 43 49 button1 524288 -height 80 -width 100
+    mouse-press 43 49 button1 -height 80 -width 100
+    mouse-double-click 43 49 button1 -height 80 -width 100
+    mouse-release 43 49 button1 524288 -height 80 -width 100
+}
+with [get-window "IFDelimited_01 - Properties"] {
+    get-tab-folder | get-tab-item General | click
+    get-button OK | click
+}
+with [get-editor "AllComponents.job" | get-diagram | get-edit-part -className ContainerEditPart | get-edit-part 
+    -className ComponentEditPart -index 1] {
+    mouse-move 61 54 button1 -height 80 -width 100
+    mouse-press 61 54 button1 -height 80 -width 100
+    mouse-release 61 54 button1 524288 -height 80 -width 100
+    mouse-press 61 54 button1 -height 80 -width 100
+    mouse-double-click 61 54 button1 -height 80 -width 100
+    mouse-release 61 54 button1 524288 -height 80 -width 100
+}
+with [get-window "IFixedWidth_01 - Properties"] {
+    get-tab-folder | get-tab-item General | click
+    get-button OK | click
+}
+with [get-editor "AllComponents.job" | get-diagram | get-edit-part -className ContainerEditPart | get-edit-part 
+    -className ComponentEditPart -index 2] {
+    with [get-edit-part -className PortEditPart] {
+        mouse-move 4 6 button1 -height 10 -width 27
+        mouse-press 4 6 button1 -height 10 -width 27
+        mouse-release 4 6 button1 524288 -height 10 -width 27
+        mouse-press 4 6 button1 -height 10 -width 27
+        mouse-double-click 4 6 button1 -height 10 -width 27
+        mouse-release 4 6 button1 524288 -height 10 -width 27
+    }
+    mouse-move 63 50 button1 -height 80 -width 100
+    mouse-press 63 50 button1 -height 80 -width 100
+    mouse-release 63 50 button1 524288 -height 80 -width 100
+    mouse-press 63 50 button1 -height 80 -width 100
+    mouse-double-click 63 50 button1 -height 80 -width 100
+    mouse-release 63 50 button1 524288 -height 80 -width 100
+}
+with [get-window "IFMixedScheme_01 - Properties"] {
+    get-tab-folder | get-tab-item General | click
+    get-button OK | click
+}
+with [get-editor "AllComponents.job" | get-diagram | get-edit-part -className ContainerEditPart | get-edit-part 
+    -className ComponentEditPart -index 3] {
+    mouse-move 48 41 button1 -height 80 -width 100
+    mouse-press 48 41 button1 -height 80 -width 100
+    mouse-release 48 41 button1 524288 -height 80 -width 100
+    mouse-press 48 41 button1 -height 80 -width 100
+    mouse-double-click 48 41 button1 -height 80 -width 100
+    mouse-release 48 41 button1 524288 -height 80 -width 100
+}
+with [get-window "IFParquet_01 - Properties"] {
+    get-tab-folder | get-tab-item General | click
+    get-button OK | click
+}
+with [get-editor "AllComponents.job" | get-diagram] {
+    with [get-edit-part -className ContainerEditPart | get-edit-part -className ComponentEditPart -index 4] {
+        mouse-move 35 51 button1 -height 80 -width 100
+        mouse-press 35 51 button1 -height 80 -width 100
+        mouse-move 35 52 -mask 524288 -height 80 -width 100
+    }
+    mouse-drag 240 111 button1 524288 -height 479 -width 1137
+    mouse-release 240 111 button1 524288 -height 479 -width 1137
+    with [get-edit-part -className ContainerEditPart | get-edit-part -className ComponentEditPart -index 4] {
+        mouse-press 35 51 button1 -height 80 -width 100
+        mouse-double-click 35 51 button1 -height 80 -width 100
+        mouse-release 35 51 button1 524288 -height 80 -width 100
+    }
+}
+with [get-window "GRecords_01 - Properties"] {
+    get-tab-folder | get-tab-item General | click
+    get-button OK | click
+}
+with [get-editor "AllComponents.job" | get-diagram | get-edit-part -className ContainerEditPart | get-edit-part 
+    -className ComponentEditPart -index 5] {
+    mouse-move 49 49 button1 -height 80 -width 100
+    mouse-press 49 49 button1 -height 80 -width 100
+    mouse-release 49 49 button1 524288 -height 80 -width 100
+    mouse-press 49 49 button1 -height 80 -width 100
+    mouse-double-click 49 49 button1 -height 80 -width 100
+    mouse-release 49 49 button1 524288 -height 80 -width 100
+}
+with [get-window "IHiveParquet_01 - Properties"] {
+    get-tab-folder | get-tab-item General | click
+    get-button OK | click
+}
+with [get-editor "AllComponents.job" | get-diagram | get-edit-part -className ContainerEditPart | get-edit-part 
+    -className ComponentEditPart -index 6] {
+    mouse-move 48 42 button1 -height 80 -width 100
+    mouse-press 48 42 button1 -height 80 -width 100
+    mouse-release 48 42 button1 524288 -height 80 -width 100
+    mouse-press 48 42 button1 -height 80 -width 100
+    mouse-double-click 48 42 button1 -height 80 -width 100
+    mouse-release 48 42 button1 524288 -height 80 -width 100
+}
+with [get-window "IHiveTextFile_01 - Properties"] {
+    get-tab-folder | get-tab-item General | click
+    get-button OK | click
+}
+get-editor "AllComponents.job" | get-diagram | get-edit-part -className ContainerEditPart | get-edit-part 
+    -className ComponentEditPart -index 3 | mouse-move 10 52 -height 80 -width 100
+with [get-view Palette | get-palette] {
+    with [get-palette-entry Output] {
+        mouse-move 152 6 button1 -height 22 -width 280
+        mouse-press 152 6 button1 -height 22 -width 280
+        mouse-release 152 6 button1 524288 -height 22 -width 280
+    }
+    with [get-palette-entry Discard] {
+        mouse-move 67 13 button1 -height 23 -width 280
+        mouse-press 67 13 button1 -height 23 -width 280
+        get-figure 0 | drag-start 67 13
+    }
+}
+with [get-editor "AllComponents.job" | get-diagram | get-edit-part -className ContainerEditPart] {
+    drag-enter 4 208 -detail move
+    get-edit-part -className ComponentEditPart -index 1 | drag-over 30 23 -detail copy
+    drag-over 430 65 -detail copy
+    drag-exit
+    drag-accept 430 65 -detail copy
+}
+get-view Palette | get-palette | drag-set-data
+get-editor "AllComponents.job" | get-diagram | get-edit-part -className ContainerEditPart | drop 430 65 -detail copy
+with [get-view Palette | get-palette] {
+    drag-end -detail copy
+    get-palette-entry | mouse-hover 473 98 -mask 524288 -height 451 -width 280
+}
+get-editor "AllComponents.job" | get-diagram | get-edit-part -className ContainerEditPart | get-edit-part 
+    -className ComponentEditPart -index 1 | mouse-move 3 44 -height 80 -width 100
+with [get-view Palette | get-palette] {
+    with [get-palette-entry "File Delimited" -index 1] {
+        mouse-move 51 5 button1 -height 23 -width 280
+        mouse-press 51 5 button1 -height 23 -width 280
+        get-figure 0 | drag-start 51 5
+    }
+}
+with [get-editor "AllComponents.job" | get-diagram | get-edit-part -className ContainerEditPart] {
+    drag-enter 37 258 -detail move
+    drag-over 264 219 -detail copy
+    get-edit-part -className ComponentEditPart -index 5 | drag-over 78 17 -detail copy
+    drag-over 463 187 -detail copy
+    drag-exit
+    drag-accept 463 187 -detail copy
+}
+get-view Palette | get-palette | drag-set-data
+get-editor "AllComponents.job" | get-diagram | get-edit-part -className ContainerEditPart | drop 463 187 -detail copy
+with [get-view Palette | get-palette] {
+    drag-end -detail copy
+    get-palette-entry | mouse-hover 653 164 -mask 524288 -height 451 -width 280
+}
+get-editor "AllComponents.job" | get-diagram | get-edit-part -className ContainerEditPart | get-edit-part 
+    -className ComponentEditPart -index 5 | mouse-move 44 28 -height 80 -width 100
+with [get-view Palette | get-palette] {
+    get-palette-entry Discard | mouse-move 192 16 -height 23 -width 280
+    with [get-palette-entry "File Fixed Width" -index 1] {
+        mouse-move 84 10 button1 -height 23 -width 280
+        mouse-press 84 10 button1 -height 23 -width 280
+        get-figure 0 | drag-start 84 10
+    }
+}
+with [get-editor "AllComponents.job" | get-diagram | get-edit-part -className ContainerEditPart] {
+    drag-enter 3 300 -detail move
+    drag-over 74 300 -detail copy
+    drag-over 271 300 -detail copy
+    drag-over 467 296 -detail copy
+    drag-exit
+    drag-accept 467 296 -detail copy
+}
+get-view Palette | get-palette | drag-set-data
+get-editor "AllComponents.job" | get-diagram | get-edit-part -className ContainerEditPart | drop 467 296 -detail copy
+with [get-view Palette | get-palette] {
+    drag-end -detail copy
+    get-palette-entry | mouse-hover 698 279 -mask 524288 -height 451 -width 280
+}
+get-editor "AllComponents.job" | get-diagram | get-edit-part -className ContainerEditPart | get-edit-part 
+    -className ComponentEditPart -index 3 | mouse-move 32 0 -height 80 -width 100
+with [get-view Palette | get-palette] {
+    with [get-palette-entry "File Mixed Scheme" -index 1] {
+        mouse-move 126 11 button1 -height 23 -width 280
+        mouse-press 126 11 button1 -height 23 -width 280
+        get-figure 0 | drag-start 126 11
+    }
+}
+with [get-editor "AllComponents.job" | get-diagram | get-edit-part -className ContainerEditPart] {
+    drag-enter 44 274 -detail move
+    get-edit-part -className ComponentEditPart -index 2 | drag-over 99 14 -detail copy
+    drag-over 601 70 -detail copy
+    drag-exit
+    drag-accept 601 70 -detail copy
+}
+get-view Palette | get-palette | drag-set-data
+get-editor "AllComponents.job" | get-diagram | get-edit-part -className ContainerEditPart | drop 601 70 -detail copy
+with [get-view Palette | get-palette] {
+    drag-end -detail copy
+    get-palette-entry | mouse-hover 811 123 -mask 524288 -height 451 -width 280
+}
+get-editor "AllComponents.job" | get-diagram | get-edit-part -className ContainerEditPart | get-edit-part 
+    -className ComponentEditPart -index 2 | mouse-move 7 30 -height 80 -width 100
+with [get-view Palette | get-palette] {
+    with [get-palette-entry "File Parquet" -index 1] {
+        mouse-move 107 6 button1 -height 23 -width 280
+        mouse-press 107 6 button1 -height 23 -width 280
+        get-figure 0 | drag-start 107 6
+    }
+}
+with [get-editor "AllComponents.job" | get-diagram | get-edit-part -className ContainerEditPart] {
+    drag-enter 1 313 -detail move
+    drag-over 439 246 -detail copy
+    drag-over 667 180 -detail copy
+    drag-exit
+    drag-accept 667 180 -detail copy
+}
+get-view Palette | get-palette | drag-set-data
+get-editor "AllComponents.job" | get-diagram | get-edit-part -className ContainerEditPart | drop 667 180 -detail copy
+with [get-view Palette | get-palette] {
+    drag-end -detail copy
+    get-palette-entry | mouse-hover 993 145 -mask 524288 -height 451 -width 280
+}
+get-editor "AllComponents.job" | get-diagram | get-edit-part -className ContainerEditPart | get-edit-part 
+    -className ComponentEditPart -index 2 | mouse-move 10 39 -height 80 -width 100
+with [get-view Palette | get-palette] {
+    with [get-palette-entry "Hive Parquet" -index 1] {
+        mouse-move 84 5 button1 -height 23 -width 280
+        mouse-press 84 5 button1 -height 23 -width 280
+        get-figure 0 | drag-start 84 5
+    }
+}
+with [get-editor "AllComponents.job" | get-diagram | get-edit-part -className ContainerEditPart] {
+    drag-enter 35 347 -detail move
+    drag-over 107 345 -detail copy
+    drag-over 251 344 -detail copy
+    drag-over 465 327 -detail copy
+    get-edit-part -className ComponentEditPart -index 9 | drag-over 42 19 -detail copy
+    drag-over 682 294 -detail copy
+    drag-exit
+    drag-accept 682 294 -detail copy
+}
+get-view Palette | get-palette | drag-set-data
+get-editor "AllComponents.job" | get-diagram | get-edit-part -className ContainerEditPart | drop 682 294 -detail copy
+with [get-view Palette | get-palette] {
+    drag-end -detail copy
+    get-palette-entry | mouse-hover 673 315 -mask 524288 -height 451 -width 280
+}
+get-editor "AllComponents.job" | get-diagram | get-edit-part -className ContainerEditPart | get-edit-part 
+    -className ComponentEditPart -index 3 | mouse-move 31 23 -height 80 -width 100
+with [get-view Palette | get-palette | get-palette-entry "Hive Text File" -index 1] {
+    mouse-move 77 10 button1 -height 23 -width 280
+    mouse-press 77 10 button1 -height 23 -width 280
+    get-figure 0 | drag-start 77 10
+}
+with [get-editor "AllComponents.job" | get-diagram | get-edit-part -className ContainerEditPart] {
+    drag-enter 26 399 -detail move
+    drag-over 612 406 -detail copy
+    drag-exit
+    drag-accept 612 406 -detail copy
+}
+get-view Palette | get-palette | drag-set-data
+get-editor "AllComponents.job" | get-diagram | get-edit-part -className ContainerEditPart | drop 612 406 -detail copy
+with [get-view Palette | get-palette] {
+    drag-end -detail copy
+    get-palette-entry | mouse-hover 620 376 -mask 524288 -height 451 -width 280
+}
+with [get-editor "AllComponents.job" | get-diagram | get-edit-part -className ContainerEditPart | get-edit-part 
+    -className ComponentEditPart -index 7] {
+    mouse-move 44 53 button1 -height 80 -width 100
+    mouse-press 44 53 button1 -height 80 -width 100
+    mouse-release 44 53 button1 524288 -height 80 -width 100
+    mouse-press 44 53 button1 -height 80 -width 100
+    mouse-double-click 44 53 button1 -height 80 -width 100
+    mouse-release 44 53 button1 524288 -height 80 -width 100
+}
+with [get-window "Discard_01 - Properties"] {
+    get-tab-folder | get-tab-item General | click
+    get-button OK | click
+}
+with [get-editor "AllComponents.job" | get-diagram | get-edit-part -className ContainerEditPart | get-edit-part 
+    -className ComponentEditPart -index 10] {
+    mouse-move 46 46 button1 -height 80 -width 100
+    mouse-press 46 46 button1 -height 80 -width 100
+    mouse-release 46 46 button1 524288 -height 80 -width 100
+    mouse-press 46 46 button1 -height 80 -width 100
+    mouse-double-click 46 46 button1 -height 80 -width 100
+    mouse-release 46 46 button1 524288 -height 80 -width 100
+}
+with [get-window "OFMixedScheme_01 - Properties"] {
+    get-tab-folder | get-tab-item General | click
+    get-button OK | click
+}
+with [get-editor "AllComponents.job" | get-diagram | get-edit-part -className ContainerEditPart | get-edit-part 
+    -className ComponentEditPart -index 8] {
+    mouse-move 48 44 button1 -height 80 -width 100
+    mouse-press 48 44 button1 -height 80 -width 100
+    mouse-release 48 44 button1 524288 -height 80 -width 100
+    mouse-move 47 44 button1 -height 80 -width 100
+    mouse-press 47 44 button1 -height 80 -width 100
+    mouse-double-click 47 44 button1 -height 80 -width 100
+    mouse-release 47 44 button1 524288 -height 80 -width 100
+}
+with [get-window "OFDelimited_01 - Properties"] {
+    get-tab-folder | get-tab-item General | click
+    get-button OK | click
+}
+with [get-editor "AllComponents.job" | get-diagram] {
+    with [get-edit-part -className ContainerEditPart | get-edit-part -className ComponentEditPart -index 11] {
+        mouse-move 49 55 button1 -height 80 -width 100
+        mouse-press 49 55 button1 -height 80 -width 100
+        mouse-release 49 55 button1 524288 -height 80 -width 100
+        mouse-press 49 55 button1 -height 80 -width 100
+        mouse-move 49 56 -mask 524288 -height 80 -width 100
+    }
+    mouse-drag 722 242 -mask 524288 -height 489 -width 1122
+    get-edit-part -className ContainerEditPart | get-edit-part -className ComponentEditPart -index 11 
+        | mouse-double-click 49 56 button1 -height 80 -width 100
+    mouse-release 716 236 button1 524288 -height 489 -width 1122
+    get-edit-part -className ContainerEditPart | get-edit-part -className ComponentEditPart -index 11 
+        | mouse-release 49 56 button1 524288 -height 80 -width 100
+}
+with [get-window "OFParquet_01 - Properties"] {
+    get-tab-folder | get-tab-item General | click
+    get-button OK | click
+}
+with [get-editor "AllComponents.job" | get-diagram | get-edit-part -className ContainerEditPart | get-edit-part 
+    -className ComponentEditPart -index 9] {
+    mouse-move 51 42 button1 -height 80 -width 100
+    mouse-press 51 42 button1 -height 80 -width 100
+    mouse-release 51 42 button1 524288 -height 80 -width 100
+    mouse-press 51 42 button1 -height 80 -width 100
+    mouse-double-click 51 42 button1 -height 80 -width 100
+    mouse-release 51 42 button1 524288 -height 80 -width 100
+}
+with [get-window "OFixedWidth_01 - Properties"] {
+    get-tab-folder | get-tab-item General | click
+    get-button OK | click
+}
+with [get-editor "AllComponents.job" | get-diagram | get-edit-part -className ContainerEditPart | get-edit-part 
+    -className ComponentEditPart -index 12] {
+    mouse-move 39 54 button1 -height 80 -width 100
+    mouse-press 39 54 button1 -height 80 -width 100
+    mouse-release 39 54 button1 524288 -height 80 -width 100
+    mouse-press 39 54 button1 -height 80 -width 100
+    mouse-double-click 39 54 button1 -height 80 -width 100
+    mouse-release 39 54 button1 524288 -height 80 -width 100
+}
+with [get-window "OHive_Parquet_01 - Properties"] {
+    get-tab-folder | get-tab-item General | click
+    get-button OK | click
+}
+with [get-editor "AllComponents.job" | get-diagram | get-edit-part -className ContainerEditPart | get-edit-part 
+    -className ComponentEditPart -index 13] {
+    mouse-move 45 40 button1 -height 80 -width 100
+    mouse-press 45 40 button1 -height 80 -width 100
+    mouse-release 45 40 button1 524288 -height 80 -width 100
+    mouse-press 45 50 button1 -height 80 -width 100
+    mouse-double-click 45 50 button1 -height 80 -width 100
+    mouse-release 45 50 button1 524288 -height 80 -width 100
+}
+with [get-window "OHive_TextFile_01 - Properties"] {
+    get-tab-folder | get-tab-item General | click
+    get-button OK | click
+}
+with [get-view Palette | get-palette] {
+    with [get-palette-entry Transform] {
+        mouse-move 117 11 button1 -height 22 -width 280
+        mouse-press 117 11 button1 -height 22 -width 280
+        mouse-release 117 11 button1 524288 -height 22 -width 280
+    }
+    with [get-palette-entry Aggregate] {
+        mouse-move 56 12 button1 -height 23 -width 280
+        mouse-press 56 12 button1 -height 23 -width 280
+        get-figure 0 | drag-start 56 12
+    }
+}
+with [get-editor "AllComponents.job" | get-diagram | get-edit-part -className ContainerEditPart] {
+    get-edit-part -className ComponentEditPart | drag-enter 46 69 -detail move
+    drag-over 202 89 -detail copy
+    drag-over 765 46 -detail copy
+    get-edit-part -className ComponentEditPart | drag-exit
+    drag-accept 765 46 -detail copy
+}
+get-view Palette | get-palette | drag-set-data
+get-editor "AllComponents.job" | get-diagram | get-edit-part -className ContainerEditPart | drop 765 46 -detail copy
+with [get-view Palette | get-palette] {
+    drag-end -detail copy
+    get-palette-entry | mouse-hover 794 9 -mask 524288 -height 451 -width 280
+}
+get-editor "AllComponents.job" | get-diagram | get-edit-part -className ContainerEditPart | get-edit-part 
+    -className ComponentEditPart -index 7 | mouse-move 72 34 -height 80 -width 100
+with [get-view Palette | get-palette] {
+    with [get-palette-entry Cumulate] {
+        mouse-move 69 0 -height 23 -width 280
+        mouse-move 40 11 button1 -height 23 -width 280
+        mouse-press 40 11 button1 -height 23 -width 280
+        get-figure 0 | drag-start 40 11
+    }
+}
+with [get-editor "AllComponents.job" | get-diagram | get-edit-part -className ContainerEditPart] {
+    drag-enter 12 132 -detail move
+    drag-over 151 124 -detail copy
+    drag-over 581 136 -detail copy
+    drag-over 828 151 -detail copy
+    drag-exit
+    drag-accept 828 151 -detail copy
+}
+get-view Palette | get-palette | drag-set-data
+get-editor "AllComponents.job" | get-diagram | get-edit-part -className ContainerEditPart | drop 828 151 -detail copy
+with [get-view Palette | get-palette] {
+    drag-end -detail copy
+    get-palette-entry | mouse-hover 1035 110 -mask 524288 -height 451 -width 280
+}
+get-editor "AllComponents.job" | get-diagram | get-edit-part -className ContainerEditPart | get-edit-part 
+    -className ComponentEditPart -index 10 | mouse-move 48 89 -height 96 -width 100
+with [get-view Palette | get-palette] {
+    with [get-palette-entry Filter] {
+        mouse-move 37 13 button1 -height 23 -width 280
+        mouse-press 37 13 button1 -height 23 -width 280
+        get-figure 0 | drag-start 37 13
+    }
+}
+with [get-editor "AllComponents.job" | get-diagram | get-edit-part -className ContainerEditPart] {
+    get-edit-part -className ComponentEditPart -index 1 | drag-enter 26 44 -detail move
+    drag-over 380 182 -detail copy
+    drag-over 657 207 -detail copy
+    drag-over 850 247 -detail copy
+    get-edit-part -className ComponentEditPart -index 1 | drag-exit
+    drag-accept 850 247 -detail copy
+}
+get-view Palette | get-palette | drag-set-data
+get-editor "AllComponents.job" | get-diagram | get-edit-part -className ContainerEditPart | drop 850 247 -detail copy
+with [get-view Palette | get-palette] {
+    drag-end -detail copy
+    get-palette-entry | mouse-hover 1123 206 -mask 524288 -height 451 -width 280
+}
+get-editor "AllComponents.job" | get-diagram | get-edit-part -className ContainerEditPart | get-edit-part 
+    -className ComponentEditPart -index 5 | mouse-move 3 41 -height 80 -width 100
+with [get-view Palette | get-palette] {
+    with [get-palette-entry Lookup] {
+        mouse-move 75 21 -height 23 -width 280
+        mouse-move 55 0 -height 23 -width 280
+    }
+    with [get-palette-entry Join] {
+        mouse-move 52 13 button1 -height 23 -width 280
+        mouse-press 52 13 button1 -height 23 -width 280
+        get-figure 0 | drag-start 52 13
+    }
+}
+with [get-editor "AllComponents.job" | get-diagram | get-edit-part -className ContainerEditPart] {
+    drag-enter 13 228 -detail move
+    get-edit-part -className ComponentEditPart -index 2 | drag-over 74 22 -detail copy
+    drag-over 646 328 -detail copy
+    drag-over 880 366 -detail copy
+    drag-exit
+    drag-accept 880 366 -detail copy
+}
+get-view Palette | get-palette | drag-set-data
+get-editor "AllComponents.job" | get-diagram | get-edit-part -className ContainerEditPart | drop 880 366 -detail copy
+with [get-view Palette | get-palette] {
+    drag-end -detail copy
+    get-palette-entry | mouse-hover 1174 340 -mask 524288 -height 451 -width 280
+}
+get-editor "AllComponents.job" | get-diagram | get-edit-part -className ContainerEditPart | get-edit-part 
+    -className ComponentEditPart -index 2 | mouse-move 1 61 -height 80 -width 100
+with [get-view Palette | get-palette] {
+    with [get-palette-entry Lookup] {
+        mouse-move 61 13 button1 -height 23 -width 280
+        mouse-press 61 13 button1 -height 23 -width 280
+        get-figure 0 | drag-start 61 13
+    }
+}
+with [get-editor "AllComponents.job" | get-diagram | get-edit-part -className ContainerEditPart] {
+    drag-enter 70 209 -detail move
+    drag-over 217 198 -detail copy
+    drag-over 564 158 -detail copy
+    drag-over 785 128 -detail copy
+    drag-over 924 59 -detail copy
+    drag-exit
+    drag-accept 924 59 -detail copy
+}
+get-view Palette | get-palette | drag-set-data
+get-editor "AllComponents.job" | get-diagram | get-edit-part -className ContainerEditPart | drop 924 59 -detail copy
+with [get-view Palette | get-palette] {
+    drag-end -detail copy
+    get-palette-entry | mouse-hover 1153 63 -mask 524288 -height 451 -width 280
+}
+get-editor "AllComponents.job" | get-diagram | get-edit-part -className ContainerEditPart | get-edit-part 
+    -className ComponentEditPart -index 7 | mouse-move 40 77 -height 80 -width 100
+with [get-view Palette | get-palette] {
+    with [get-palette-entry Normalize] {
+        mouse-move 43 13 button1 -height 23 -width 280
+        mouse-press 43 13 button1 -height 23 -width 280
+        get-figure 0 | drag-start 43 13
+    }
+}
+with [get-editor "AllComponents.job" | get-diagram | get-edit-part -className ContainerEditPart] {
+    get-edit-part -className ComponentEditPart -index 1 | drag-enter 90 67 -detail move
+    drag-over 579 161 -detail copy
+    drag-over 801 155 -detail copy
+    drag-over 965 182 -detail copy
+    get-edit-part -className ComponentEditPart -index 1 | drag-exit
+    drag-accept 965 182 -detail copy
+}
+get-view Palette | get-palette | drag-set-data
+get-editor "AllComponents.job" | get-diagram | get-edit-part -className ContainerEditPart | drop 965 182 -detail copy
+with [get-view Palette | get-palette] {
+    drag-end -detail copy
+    get-palette-entry | mouse-hover 1090 116 -mask 524288 -height 451 -width 280
+}
+get-editor "AllComponents.job" | get-diagram | get-edit-part -className ContainerEditPart | get-edit-part 
+    -className ComponentEditPart -index 2 | mouse-move 15 0 -height 80 -width 100
+with [get-view Palette | get-palette] {
+    with [get-palette-entry Transform -index 1] {
+        mouse-move 53 17 button1 -height 23 -width 280
+        mouse-press 53 17 button1 -height 23 -width 280
+        get-figure 0 | drag-start 53 17
+    }
+}
+with [get-editor "AllComponents.job" | get-diagram | get-edit-part -className ContainerEditPart] {
+    drag-enter 11 256 -detail move
+    drag-over 268 244 -detail copy
+    drag-over 845 280 -detail copy
+    drag-over 1001 286 -detail copy
+    drag-exit
+    drag-accept 1001 286 -detail copy
+}
+get-view Palette | get-palette | drag-set-data
+get-editor "AllComponents.job" | get-diagram | get-edit-part -className ContainerEditPart | drop 1001 286 -detail copy
+with [get-view Palette | get-palette] {
+    drag-end -detail copy
+    get-palette-entry | mouse-hover 806 232 -mask 524288 -height 451 -width 280
+}
+get-editor "AllComponents.job" | get-diagram | get-edit-part -className ContainerEditPart | get-edit-part 
+    -className ComponentEditPart -index 12 | mouse-move 9 0 -height 80 -width 100
+with [get-view Palette | get-palette | get-palette-entry "Unique Sequence"] {
+    mouse-move 110 14 button1 -height 23 -width 280
+    mouse-press 110 14 button1 -height 23 -width 280
+    get-figure 0 | drag-start 110 14
+}
+with [get-editor "AllComponents.job" | get-diagram | get-edit-part -className ContainerEditPart] {
+    get-edit-part -className ComponentEditPart -index 2 | drag-enter 51 65 -detail move
+    drag-over 428 325 -detail copy
+    drag-over 874 394 -detail copy
+    drag-over 1042 395 -detail copy
+    get-edit-part -className ComponentEditPart -index 2 | drag-exit
+    drag-accept 1042 395 -detail copy
+}
+get-view Palette | get-palette | drag-set-data
+get-editor "AllComponents.job" | get-diagram | get-edit-part -className ContainerEditPart | drop 1042 395 -detail copy
+with [get-view Palette | get-palette] {
+    drag-end -detail copy
+    get-palette-entry | mouse-hover 1132 351 -mask 524288 -height 451 -width 280
+}
+with [get-editor "AllComponents.job" | get-diagram | get-edit-part -className ContainerEditPart | get-edit-part 
+    -className ComponentEditPart -index 14] {
+    mouse-move 50 38 button1 -height 80 -width 100
+    mouse-press 50 38 button1 -height 80 -width 100
+    mouse-release 50 38 button1 524288 -height 80 -width 100
+    mouse-press 50 38 button1 -height 80 -width 100
+    mouse-double-click 50 38 button1 -height 80 -width 100
+    mouse-release 50 38 button1 524288 -height 80 -width 100
+}
+with [get-window "Aggregate_01 - Properties"] {
+    get-tab-folder | get-tab-item General | click
+    get-button OK | click
+}
+with [get-editor "AllComponents.job" | get-diagram | get-edit-part -className ContainerEditPart | get-edit-part 
+    -className ComponentEditPart -index 15] {
+    mouse-move 46 38 button1 -height 80 -width 100
+    mouse-press 46 38 button1 -height 80 -width 100
+    mouse-release 46 38 button1 524288 -height 80 -width 100
+    mouse-press 46 38 button1 -height 80 -width 100
+    mouse-double-click 46 38 button1 -height 80 -width 100
+    mouse-release 46 38 button1 524288 -height 80 -width 100
+}
+with [get-window "Cumulate_01 - Properties"] {
+    get-tab-folder | get-tab-item General | click
+    get-button OK | click
+}
+with [get-editor "AllComponents.job" | get-diagram | get-edit-part -className ContainerEditPart | get-edit-part 
+    -className ComponentEditPart -index 16] {
+    mouse-move 34 51 button1 -height 80 -width 100
+    mouse-press 34 51 button1 -height 80 -width 100
+    mouse-release 34 51 button1 524288 -height 80 -width 100
+    mouse-press 34 51 button1 -height 80 -width 100
+    mouse-double-click 34 51 button1 -height 80 -width 100
+    mouse-release 34 51 button1 524288 -height 80 -width 100
+}
+with [get-window "Filter_01 - Properties"] {
+    get-tab-folder | get-tab-item General | click
+    get-button OK | click
+}
+with [get-editor "AllComponents.job" | get-diagram | get-edit-part -className ContainerEditPart | get-edit-part 
+    -className ComponentEditPart -index 17] {
+    mouse-move 48 63 button1 -height 97 -width 99
+    mouse-press 48 63 button1 -height 97 -width 99
+    mouse-release 48 63 button1 524288 -height 97 -width 99
+    mouse-press 48 63 button1 -height 97 -width 99
+    mouse-double-click 48 63 button1 -height 97 -width 99
+    mouse-release 48 63 button1 524288 -height 97 -width 99
+}
+with [get-window "Join_01 - Properties"] {
+    get-tab-folder | get-tab-item General | click
+    get-button OK | click
+}
+with [get-editor "AllComponents.job" | get-diagram | get-edit-part -className ContainerEditPart] {
+    get-edit-part -className ComponentEditPart -index 16 | mouse-move 18 40 -height 80 -width 100
+    with [get-edit-part -className ComponentEditPart -index 18] {
+        mouse-move 53 75 button1 -height 97 -width 100
+        mouse-press 53 75 button1 -height 97 -width 100
+        mouse-release 53 75 button1 524288 -height 97 -width 100
+        mouse-press 53 75 button1 -height 97 -width 100
+        mouse-double-click 53 75 button1 -height 97 -width 100
+        mouse-release 53 75 button1 524288 -height 97 -width 100
+    }
+}
+with [get-window "Lookup_01 - Properties"] {
+    get-tab-folder | get-tab-item General | click
+    get-button OK | click
+}
+with [get-editor "AllComponents.job" | get-diagram | get-edit-part -className ContainerEditPart] {
+    get-edit-part -className ComponentEditPart -index 16 | mouse-move 98 17 -height 80 -width 100
+    with [get-edit-part -className ComponentEditPart -index 19] {
+        mouse-move 44 40 button1 -height 80 -width 100
+        mouse-press 44 40 button1 -height 80 -width 100
+        mouse-release 44 40 button1 524288 -height 80 -width 100
+        mouse-press 44 40 button1 -height 80 -width 100
+        mouse-double-click 44 40 button1 -height 80 -width 100
+        mouse-release 44 40 button1 524288 -height 80 -width 100
+    }
+}
+with [get-window "Normalize_01 - Properties"] {
+    get-tab-folder | get-tab-item General | click
+    get-button OK | click
+}
+with [get-editor "AllComponents.job" | get-diagram | get-edit-part -className ContainerEditPart] {
+    get-edit-part -className ComponentEditPart -index 17 | mouse-move 76 51 -height 97 -width 99
+    with [get-edit-part -className ComponentEditPart -index 20] {
+        mouse-move 37 47 button1 -height 80 -width 100
+        mouse-press 37 47 button1 -height 80 -width 100
+        mouse-release 37 47 button1 524288 -height 80 -width 100
+        mouse-press 37 47 button1 -height 80 -width 100
+        mouse-double-click 37 47 button1 -height 80 -width 100
+        mouse-release 37 47 button1 524288 -height 80 -width 100
+    }
+}
+with [get-window "Transform_01 - Properties"] {
+    get-tab-folder | get-tab-item General | click
+    get-button OK | click
+}
+with [get-editor "AllComponents.job" | get-diagram | get-edit-part -className ContainerEditPart | get-edit-part 
+    -className ComponentEditPart -index 21] {
+    mouse-move 28 51 button1 -height 80 -width 100
+    mouse-press 28 51 button1 -height 80 -width 100
+    mouse-release 28 51 button1 524288 -height 80 -width 100
+    mouse-press 51 57 button1 -height 80 -width 100
+    mouse-double-click 51 57 button1 -height 80 -width 100
+    mouse-release 51 57 button1 524288 -height 80 -width 100
+}
+with [get-window "UniqueSeq_01 - Properties"] {
+    get-tab-folder | get-tab-item General | click
+    get-button OK | click
+}
+with [get-view Palette | get-palette] {
+    with [get-palette-entry Straightpull] {
+        mouse-move 219 11 button1 -height 22 -width 280
+        mouse-press 219 11 button1 -height 22 -width 280
+        mouse-release 219 11 button1 524288 -height 22 -width 280
+    }
+    with [get-palette-entry Clone] {
+        mouse-move 177 21 -height 23 -width 280
+        mouse-move 68 12 button1 -height 23 -width 280
+        mouse-press 68 12 button1 -height 23 -width 280
+        get-figure 0 | drag-start 68 12
+    }
+}
+with [get-editor "AllComponents.job" | get-diagram | get-edit-part -className ContainerEditPart] {
+    drag-enter 75 308 -detail move
+    drag-over 594 219 -detail copy
+    drag-over 909 116 -detail copy
+    drag-over 1081 74 -detail copy
+    drag-exit
+    drag-accept 1081 74 -detail copy
+}
+get-view Palette | get-palette | drag-set-data
+get-editor "AllComponents.job" | get-diagram | get-edit-part -className ContainerEditPart | drop 1081 74 -detail copy
+with [get-view Palette | get-palette] {
+    drag-end -detail copy
+    get-palette-entry | mouse-hover 1053 122 -mask 524288 -height 451 -width 280
+}
+get-editor "AllComponents.job" | get-diagram | get-edit-part -className ContainerEditPart | get-edit-part 
+    -className ComponentEditPart -index 2 | mouse-move 9 61 -height 80 -width 100
+with [get-view Palette | get-palette] {
+    get-palette-entry Clone | mouse-move 197 19 -height 23 -width 280
+    with [get-palette-entry Limit] {
+        mouse-move 53 15 button1 -height 23 -width 280
+        mouse-press 53 15 button1 -height 23 -width 280
+        get-figure 0 | drag-start 53 15
+    }
+}
+with [get-editor "AllComponents.job" | get-diagram | get-edit-part -className ContainerEditPart] {
+    drag-enter 50 349 -detail move
+    drag-over 675 310 -detail copy
+    get-edit-part -className ComponentEditPart -index 12 | get-edit-part -text "OHive_Parquet_01" | drag-over 92 10 
+        -detail copy
+    get-edit-part -className ComponentEditPart -index 16 | drag-over 97 26 -detail copy
+    drag-over 1134 201 -detail copy
+    drag-exit
+    drag-accept 1134 201 -detail copy
+}
+get-view Palette | get-palette | drag-set-data
+get-editor "AllComponents.job" | get-diagram | get-edit-part -className ContainerEditPart | drop 1134 201 -detail copy
+with [get-view Palette | get-palette] {
+    drag-end -detail copy
+    get-palette-entry | mouse-hover 1348 201 -mask 524288 -height 451 -width 280
+}
+get-editor "AllComponents.job" | get-diagram | get-edit-part -className ContainerEditPart | get-edit-part 
+    -className ComponentEditPart -index 3 | mouse-move 13 25 -height 80 -width 100
+with [get-view Palette | get-palette | get-palette-entry "Remove Dups"] {
+    mouse-move 87 8 button1 -height 23 -width 280
+    mouse-press 87 8 button1 -height 23 -width 280
+    get-figure 0 | drag-start 87 8
+}
+with [get-editor "AllComponents.job" | get-diagram | get-edit-part -className ContainerEditPart] {
+    get-edit-part -className ComponentEditPart -index 3 | drag-enter 36 34 -detail move
+    drag-over 443 372 -detail copy
+    drag-over 645 373 -detail copy
+    drag-over 851 373 -detail copy
+    drag-over 989 357 -detail copy
+    get-edit-part -className ComponentEditPart -index 20 | drag-over 67 50 -detail copy
+    drag-over 1154 319 -detail copy
+    get-edit-part -className ComponentEditPart -index 3 | drag-exit
+    drag-accept 1154 319 -detail copy
+}
+get-view Palette | get-palette | drag-set-data
+get-editor "AllComponents.job" | get-diagram | get-edit-part -className ContainerEditPart | drop 1154 319 -detail copy
+with [get-view Palette | get-palette] {
+    drag-end -detail copy
+    get-palette-entry | mouse-hover 670 327 -mask 524288 -height 451 -width 280
+}
+get-editor "AllComponents.job" | get-diagram | get-edit-part -className ContainerEditPart | get-edit-part 
+    -className ComponentEditPart -index 3 | mouse-move 32 42 -height 80 -width 100
+with [get-view Palette | get-palette | get-palette-entry Sort] {
+    mouse-move 117 17 -height 23 -width 280
+    mouse-move 50 17 button1 -height 23 -width 280
+    mouse-press 50 17 button1 -height 23 -width 280
+    get-figure 0 | drag-start 50 17
+}
+with [get-editor "AllComponents.job" | get-diagram | get-edit-part -className ContainerEditPart] {
+    drag-enter 70 413 -detail move
+    drag-over 487 413 -detail copy
+    drag-over 871 412 -detail copy
+    drag-over 1025 412 -detail copy
+    get-edit-part -className ComponentEditPart -index 21 | drag-over 15 17 -detail copy
+    drag-over 1204 428 -detail copy
+    drag-exit
+    drag-accept 1204 428 -detail copy
+}
+get-view Palette | get-palette | drag-set-data
+get-editor "AllComponents.job" | get-diagram | get-edit-part -className ContainerEditPart | drop 1204 428 -detail copy
+with [get-view Palette | get-palette] {
+    drag-end -detail copy
+    get-palette-entry | mouse-hover 1131 367 -mask 524288 -height 451 -width 280
+}
+with [get-editor "AllComponents.job" | get-diagram | get-edit-part -className ContainerEditPart] {
+    get-edit-part -className ComponentEditPart -index 21 | mouse-move 24 34 -height 80 -width 100
+    get-edit-part -className ComponentEditPart -index 3 | mouse-move 50 50 -height 80 -width 100
+}
+with [get-view Palette | get-palette] {
+    get-palette-entry Sort | mouse-move 80 21 -height 23 -width 280
+    with [get-palette-entry "Union All"] {
+        mouse-move 67 8 button1 -height 23 -width 280
+        mouse-press 67 8 button1 -height 23 -width 280
+        get-figure 0 | drag-start 67 8
+    }
+}
+with [get-editor "AllComponents.job" | get-diagram | get-edit-part -className ContainerEditPart] {
+    get-edit-part -className ComponentEditPart -index 3 | drag-enter 57 48 -detail move
+    drag-over 264 376 -detail copy
+    get-edit-part -className ComponentEditPart -index 6 | drag-over 96 64 -detail copy
+    drag-over 610 289 -detail copy
+    get-edit-part -className ComponentEditPart -index 11 | drag-over 64 75 -detail copy
+    drag-over 946 198 -detail copy
+    drag-over 1095 154 -detail copy
+    get-edit-part -className ComponentEditPart -index 22 | drag-over 71 55 -detail copy
+    drag-over 1225 69 -detail copy
+    get-edit-part -className ComponentEditPart -index 3 | drag-exit
+    drag-accept 1225 69 -detail copy
+}
+get-view Palette | get-palette | drag-set-data
+get-editor "AllComponents.job" | get-diagram | get-edit-part -className ContainerEditPart | drop 1225 69 -detail copy
+with [get-view Palette | get-palette] {
+    drag-end -detail copy
+    get-palette-entry | mouse-hover 1357 59 -mask 524288 -height 451 -width 280
+}
+with [get-editor "AllComponents.job" | get-diagram | get-edit-part -className ContainerEditPart] {
+    get-edit-part -className ComponentEditPart -index 24 | mouse-move 13 73 -height 80 -width 100
+    with [get-edit-part -className ComponentEditPart -index 22] {
+        mouse-move 61 56 button1 -height 80 -width 100
+        mouse-press 61 56 button1 -height 80 -width 100
+        mouse-release 61 56 button1 524288 -height 80 -width 100
+        mouse-press 61 56 button1 -height 80 -width 100
+        mouse-double-click 61 56 button1 -height 80 -width 100
+        mouse-release 61 56 button1 524288 -height 80 -width 100
+    }
+}
+with [get-window "Clone_01 - Properties"] {
+    get-tab-folder | get-tab-item General | click
+    get-button OK | click
+}
+with [get-editor "AllComponents.job" | get-diagram | get-edit-part -className ContainerEditPart | get-edit-part 
+    -className ComponentEditPart -index 23] {
+    mouse-move 31 52 button1 -height 80 -width 100
+    mouse-press 31 52 button1 -height 80 -width 100
+    mouse-release 31 52 button1 524288 -height 80 -width 100
+    mouse-press 31 52 button1 -height 80 -width 100
+    mouse-double-click 31 52 button1 -height 80 -width 100
+    mouse-release 31 52 button1 524288 -height 80 -width 100
+}
+with [get-window "Limit_01 - Properties"] {
+    get-tab-folder | get-tab-item General | click
+    get-button OK | click
+}
+with [get-editor "AllComponents.job" | get-diagram | get-edit-part -className ContainerEditPart | get-edit-part 
+    -className ComponentEditPart -index 24] {
+    mouse-move 58 37 button1 -height 80 -width 100
+    mouse-press 58 37 button1 -height 80 -width 100
+    mouse-release 58 37 button1 524288 -height 80 -width 100
+    mouse-press 58 37 button1 -height 80 -width 100
+    mouse-double-click 58 37 button1 -height 80 -width 100
+    mouse-release 58 37 button1 524288 -height 80 -width 100
+}
+with [get-window "Removedups_01 - Properties"] {
+    get-tab-folder | get-tab-item General | click
+    get-button OK | click
+}
+with [get-editor "AllComponents.job" | get-diagram | get-edit-part -className ContainerEditPart | get-edit-part 
+    -className ComponentEditPart -index 25] {
+    mouse-move 50 33 button1 -height 80 -width 100
+    mouse-press 50 33 button1 -height 80 -width 100
+    mouse-release 50 33 button1 524288 -height 80 -width 100
+    mouse-press 50 64 button1 -height 80 -width 100
+    mouse-double-click 50 64 button1 -height 80 -width 100
+    mouse-release 50 64 button1 524288 -height 80 -width 100
+}
+with [get-window "Sort_01 - Properties"] {
+    get-tab-folder | get-tab-item General | click
+    get-button OK | click
+}
+with [get-editor "AllComponents.job" | get-diagram | get-edit-part -className ContainerEditPart | get-edit-part 
+    -className ComponentEditPart -index 26] {
+    mouse-move 41 44 button1 -height 80 -width 100
+    mouse-press 41 44 button1 -height 80 -width 100
+    mouse-release 41 44 button1 524288 -height 80 -width 100
+    mouse-press 41 44 button1 -height 80 -width 100
+    mouse-double-click 41 44 button1 -height 80 -width 100
+    mouse-release 41 44 button1 524288 -height 80 -width 100
+}
+with [get-window "Unionall_01 - Properties"] {
+    get-tab-folder | get-tab-item General | click
+    get-button OK | click
+}
+with [get-editor "AllComponents.job"] {
+    with [get-diagram] {
+        mouse-move 257 394 button1 -height 511 -width 1328
+        mouse-press 257 394 button1 -height 511 -width 1328
+        mouse-release 257 394 button1 524288 -height 511 -width 1328
+        mouse-hover 258 394 -height 511 -width 1328
+        key-type "M1+s"
+        get-edit-part -className ContainerEditPart | get-edit-part -className ComponentEditPart -index 4 
+            | mouse-move 90 0 -height 80 -width 100
+    }
+    close
+}
+get-view Palette | click
+------=_.content-0a7243a0-75d3-3d5f-9791-539de0e5b7ac--

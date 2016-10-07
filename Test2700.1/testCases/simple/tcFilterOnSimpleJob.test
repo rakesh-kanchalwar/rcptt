@@ -1,0 +1,50 @@
+--- RCPTT testcase ---
+Format-Version: 1.0
+Element-Name: tcFilterOnSimpleJob
+Element-Type: testcase
+Element-Version: 3.0
+External-Reference: 
+Id: _4tHdMIp1EeajzpRxELbHyA
+Runtime-Version: 2.1.0.201606221726
+Save-Time: 10/4/16 5:07 PM
+Testcase-Type: ecl
+
+------=_.description-216f885c-d591-38ce-8ea2-e4f8cb4d6ffa
+Content-Type: text/plain
+Entry-Name: .description
+
+Testing filter on tcSimpleJob.
+Run the job twice in local mode.
+------=_.description-216f885c-d591-38ce-8ea2-e4f8cb4d6ffa--
+------=_.content-0a7243a0-75d3-3d5f-9791-539de0e5b7ac
+Content-Type: text/ecl
+Entry-Name: .content
+
+get-view "Project Explorer" | get-tree | select "Test/jobs/TestSimpleJob.job" | double-click
+with [get-editor "TestSimpleJob.job" | get-diagram] {
+    with [get-edit-part -className ContainerEditPart | get-edit-part -className ComponentEditPart -index 1 
+        | get-target-connection 0] {
+        mouse-move 63 1 button1 -height 21 -width 253
+        mouse-press 63 1 button1 -height 21 -width 253
+        mouse-release 63 1 button1 524288 -height 21 -width 253
+        mouse-press 63 1 button3 -height 21 -width 253
+        mouse-hover 63 1 -height 21 -width 253
+    }
+    get-menu "View Data/Prior Job Runs" | click
+}
+with [get-window "ViewData Execution History"] {
+    get-table | select "Job_668245127_1475614756333_1475614788084"
+    get-button OK | click
+}
+with [get-window "Data Viewer - Test_TestSimpleJob_GRecords_01_out0"] {
+    get-menu "Data/Filter" | click
+    with [get-window "Data Viewer Filter"] {
+        with [get-table] {
+            get-combo | select DefaultField0
+            get-combo -index 1 | select LIKE
+            get-editbox | set-text "l%"
+        }
+        get-button Save | click
+    }
+}
+------=_.content-0a7243a0-75d3-3d5f-9791-539de0e5b7ac--
